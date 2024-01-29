@@ -1,4 +1,4 @@
-export interface IEvent {
+export interface IEventType {
   id: string;
   name: string;
   description: string;

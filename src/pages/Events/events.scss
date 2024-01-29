@@ -22,3 +22,15 @@
     }
   }
 }
+
+.add-event {
+  @include main-style();
+}
+
+.edit-event {
+  @include main-style();
+}
+
+.delete-event {
+  @include main-style();
+}

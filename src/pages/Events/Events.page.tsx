@@ -1,17 +1,17 @@
 import "./events.scss";
 import { useEffect, useState } from "react";
-import { IEvent } from "../../types/IEvent";
+import { IEventType } from "../../types/IEvent";
 import axios from "axios";
 import { eventsUrl } from "../../constants/urls";
 
 interface Props {}
 
 const Events = (props: Props) => {
-  const [events, setEvents] = useState<IEvent[]>([]);
+  const [events, setEvents] = useState<IEventType[]>([]);
 
   const fetchEventList = async () => {
     try {
-      const response = await axios.get<IEvent[]>(eventsUrl);
+      const response = await axios.get<IEventType[]>(eventsUrl);
       setEvents(response.data);
     } catch (error) {
       alert("An Error Happened. Debug: " + error);
@@ -41,12 +41,12 @@ const Events = (props: Props) => {
               </tr>
             </thead>
             <tbody>
-              {events.map((event) => (
-                <tr key={event.id}>
-                  <td>{event.name}</td>
-                  <td>{event.description}</td>
-                  <td>{event.category}</td>
-                  <td>{new Date(event.date).toLocaleDateString()}</td>
+              {events.map((eventType) => (
+                <tr key={eventType.id}>
+                  <td>{eventType.name}</td>
+                  <td>{eventType.description}</td>
+                  <td>{eventType.category}</td>
+                  <td>{new Date(eventType.date).toLocaleDateString()}</td>
                 </tr>
               ))}
             </tbody>

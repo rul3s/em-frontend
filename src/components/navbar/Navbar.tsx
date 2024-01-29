@@ -14,13 +14,13 @@ const Navbar = (props: Props) => {
       <div className="menu">
         <ul>
           <li>
-            <Link to="/">Events</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/upload">Upload event</Link>
+            <Link to="/events">Events</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/events/add">Add event</Link>
           </li>
         </ul>
       </div>
